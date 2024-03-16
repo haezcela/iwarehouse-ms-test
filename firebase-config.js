@@ -9,6 +9,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
 import {
   getAuth,
+  onAuthStateChanged,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
@@ -35,6 +36,10 @@ import {
   doc,
   getDoc,
   setDoc,
+  addDoc,
+  query,
+  orderBy,
+  getDocs,
 } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js";
 import {
   getStorage,
@@ -55,13 +60,15 @@ const firebaseApp = initializeApp({
 
 /*USER AUTHENTICATION */
 const auth = getAuth(firebaseApp);
-export { auth };
-export { createUserWithEmailAndPassword };
-export { signInWithEmailAndPassword };
-
+export {
+  auth,
+  onAuthStateChanged,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+};
 /*DATABASE */
 const db = getFirestore(firebaseApp);
-export { db, collection, setDoc, doc, getDoc };
+export { db, collection, setDoc, doc, getDoc, getDocs, addDoc, query, orderBy };
 
 /*STORAGE */
 const storage = getStorage(firebaseApp);

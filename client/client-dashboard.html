@@ -3,9 +3,122 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Customer| Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Tag Editor CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tag-editor/1.0.20/jquery.tag-editor.css"
+    />
+    <!-- Font Awesome CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  
+    <link rel="stylesheet" href="../css/dashboard.css" />
+
   </head>
   <body>
-    <h1>CLIENT DASHBOARD</h1>
+    <div class="container-fluid">
+      <!-- Sticky Navbar -->
+      <nav class="navbar navbar-expand-md sticky-top">
+        <div class="container">
+          <!-- Company Logo -->
+          <a class="navbar-brand" href="#">
+            <img src="../images/logo.png" alt="Company Logo" />
+          </a>
+
+          <!-- User Photo -->
+          <div class="ml-auto">
+            <img
+              src="../images/dashboard/Mask group.png"
+              alt="User Photo"
+              class="user-photo"
+            />
+          </div>
+        </div>
+      </nav>
+      <!-- Recent -->
+      <div class="section pb-4">
+        <h5>Recent</h5>
+        <div class="rounded-border my-2">
+          <!-- Lower left text and Image -->
+          <div class="row position-relative">
+            <!-- Lower Left Text -->
+            <div class="col pt-3">
+              <div class="lower-left-text">
+                <p class="date m-0 p-0">Dec 11, 2023</p>
+                <p class="fix-status m-0 p-0">Device Checkup</p>
+                <p class="m-0 p-0">We've got your request</p>
+              </div>
+            </div>
+
+            <!-- Image Container -->
+            <div class="col-auto image-container">
+              <img src="../images/dashboard/vector.png" alt="Fluid Image" />
+            </div>
+          </div>
+          <!--
+        Progress Bar
+          <div class="progress" style="height: 3px">
+            <div
+              class="progress-bar"
+              role="progressbar"
+              style="width: 100%; background-color: #f47d26"
+              aria-valuenow="100"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            >
+              <div class="checkpoint"><i class="fas fa-check"></i></div>
+              <div class="checkpoint completed">
+                <i class="fas fa-check"></i>
+              </div>
+              <div class="checkpoint completed">
+                <i class="fas fa-check"></i>
+              </div>
+              <div class="checkpoint completed">
+                <i class="fas fa-check"></i>
+              </div>
+            </div>
+          </div>
+        -->
+
+           <div class="row justify-content-center p-3">
+    <div class="col-auto">
+      <img src="../images/static-progress-bar.png" class="img-fluid" alt="Fluid Image" />
+    </div>
+        </div>
+
+        <p>Please visit the nearest iWarehouse Repair Station to have your phone fixed!</p>
+      </div>
+    </div>
+
+    <!-- Past Repair -->
+    <div class="section">
+      <h5>Past Repair</h5>
+      <div class="rounded-border my-2">
+        <p class="date m-0 p-0">Dec 11, 2023</p>
+        <p class="fix-status m-0 p-0">Phone Fixed!</p>
+        <p class="m-0 p-0">We have successfully fixed your Huawei Honor 8x. Claim your phone at </p>
+      </div>
+    </div>
+
+    <!-- Sticky Round Button -->
+    <a href="fix-form.html">
+      <div class="sticky-button">
+        <i class="fas fa-plus white-icon"></i> <!-- Plus icon -->
+      </div>
+    </a>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+  
+    <script type="module" src="../client-dashboard.js"></script>  
   </body>
 </html>

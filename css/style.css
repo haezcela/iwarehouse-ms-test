@@ -1,0 +1,24 @@
+.full-height {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#signin-form {
+  flex: 1;
+}
+
+div#signin-form,
+button#google-signin {
+  background-color: #e9e9e9;
+}
+
+button,
+#login-btn,
+#signup-btn {
+  background-color: #f47d26;
+}
+
+.text-orange {
+  color: #f47d26;
+}

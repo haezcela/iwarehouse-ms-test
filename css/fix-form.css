@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* Additional CSS for styling */
+body {
+  padding: 20px;
+  font-family: "Poppins";
+}
+.container {
+  max-width: 400px;
+  margin: auto;
+}
+/* Tag Editor custom styles */
+.tag-editor {
+  background-color: white !important;
+  color: darkgray !important;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  padding: 8px;
+  font-family: "Poppins";
+}
+.tag-editor-tag {
+  background-color: white;
+  color: black !important;
+}
+/* Style for file input */
+.custom-file-input {
+  color: transparent;
+}
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content: "Upload";
+  color: white;
+  background-color: #007bff;
+  display: inline-block;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+span {
+  color: orange;
+}
+.btn-orange {
+  background-color: orange;
+  color: white;
+  border-color: orange;
+  font-size: 18px;
+}

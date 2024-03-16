@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/*DASHBOARD*/
+
+body {
+  font-family: "Poppins";
+}
+
+.container {
+  max-width: 400px;
+  margin: 20px;
+}
+
+.sticky-top {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0;
+  margin: 0;
+  background-color: white; /* Adjust as needed */
+}
+
+.navbar,
+.nav {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-brand img {
+  max-height: 40px; /* Adjust logo height as needed */
+}
+
+.user-photo {
+  max-height: 40px; /* Adjust photo height as needed */
+  border-radius: 50%; /* For circular shape */
+}
+
+.section {
+  padding: 0px 20px 0px 20px;
+}
+
+.rounded-border {
+  border: 1px solid #ddd; /* Light gray border */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; /* Add padding as needed */
+}
+
+p {
+  font-family: "Poppins";
+  color: #72777a;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+.date {
+  color: #939393;
+  font-size: 10px;
+  font-weight: 300;
+}
+
+.fix-status {
+  color: black;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+}
+
+/* PROGRESS BAR */
+.progress-bar {
+  position: relative;
+  height: 40px; /* Height of the progress bar */
+}
+
+.progress-bar .checkpoint {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px; /* Adjust icon size as needed */
+  height: 20px; /* Adjust icon size as needed */
+  border-radius: 50%;
+  background-color: #fff; /* Adjust icon background color as needed */
+  border: 2px solid #f47d26; /* Adjust icon border color as needed */
+  text-align: center;
+  line-height: 20px; /* Adjust icon line height for centering text */
+  font-size: 12px; /* Adjust icon font size as needed */
+  font-weight: bold; /* Adjust icon font weight as needed */
+}
+
+.progress-bar .checkpoint i {
+  color: #f47d26; /* Adjust icon color as needed */
+}
+
+.progress-bar .checkpoint.completed {
+  background-color: #f47d26; /* Adjust completed checkpoint color as needed */
+}
+
+.progress-bar .checkpoint.completed i {
+  color: #fff; /* Adjust completed icon color as needed */
+}
+
+.progress-bar .checkpoint:first-child {
+  left: 0%;
+}
+
+.progress-bar .checkpoint:nth-child(2) {
+  left: calc(33.33% - 10px); /* Adjust position of second checkpoint */
+}
+
+.progress-bar .checkpoint:nth-child(3) {
+  left: calc(66.66% - 10px); /* Adjust position of third checkpoint */
+}
+
+.progress-bar .checkpoint:last-child {
+  left: calc(100% - 20px); /* Adjust position of fourth checkpoint */
+}
+
+/* REQUEST FORM BUTTON*/
+.sticky-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border-radius: 50%;
+  background-color: #f47d26; /* Orange color */
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+  z-index: 1000;
+}
+.white-icon {
+  color: white; /* White color */
+  font-size: 24px; /* Adjust icon size */
+}

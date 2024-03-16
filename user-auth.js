@@ -2,6 +2,7 @@ import {
   auth,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
+  onAuthStateChanged,
   collection,
   doc,
   getDoc,
@@ -76,6 +77,7 @@ function signUp(firstName, lastName, email, password, role) {
     });
 }
 
+//LOGIN
 // Get the form
 const loginForm = document.getElementById("login-form");
 if (loginForm) {
@@ -124,3 +126,34 @@ function routeUser(role) {
       break;
   }
 }
+
+//AUTHSTATE
+let userId;
+let firstName;
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    // User is signed in
+    userId = user.uid;
+    console.log(userId);
+    // Get the user's first name from Firestore
+    getDoc(doc(db, "users", userId))
+      .then((docSnapshot) => {
+        if (docSnapshot.exists()) {
+          firstName = docSnapshot.data().firstName;
+          console.log(firstName);
+        } else {
+          console.log("No such document!");
+        }
+      })
+      .catch((error) => {
+        console.log("Error getting document:", error);
+      });
+  } else {
+    // User is signed out
+    userId = null;
+    firstName = null;
+  }
+});
+
+export { userId, firstName };
