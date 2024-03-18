@@ -5,9 +5,12 @@ import {
   onAuthStateChanged,
   collection,
   doc,
-  getDoc,
+  getDocs,
   setDoc,
+  getDoc,
   db,
+  query,
+  where,
 } from "../firebase-config.js";
 
 // Get the forms
@@ -153,6 +156,39 @@ onAuthStateChanged(auth, (user) => {
     // User is signed out
     userId = null;
     firstName = null;
+  }
+
+  // Check if user is logged in
+  if (userId) {
+    // Create a query to get orders for the specific user
+    const q = query(
+      collection(db, "order-forms"),
+      where("userId", "==", userId)
+    );
+
+    // Get all matching documents
+    getDocs(q)
+      .then((querySnapshot) => {
+        if (querySnapshot.empty) {
+          console.log("No orders found for this user.");
+          return;
+        }
+
+        querySnapshot.forEach((doc) => {
+          // Access order data from each document
+          const orderData = doc.data();
+
+          // Display order details in console (modify based on your needs)
+          console.log("Order ID:", doc.id);
+          console.log("Order Data:", orderData);
+        });
+      })
+      .catch((error) => {
+        console.error("Error getting orders:", error);
+      });
+  } else {
+    // User is signed out
+    console.log("Please sign in to view your orders.");
   }
 });
 

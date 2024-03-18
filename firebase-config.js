@@ -40,6 +40,7 @@ import {
   query,
   orderBy,
   getDocs,
+  where,
 } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js";
 import {
   getStorage,
@@ -68,7 +69,18 @@ export {
 };
 /*DATABASE */
 const db = getFirestore(firebaseApp);
-export { db, collection, setDoc, doc, getDoc, getDocs, addDoc, query, orderBy };
+export {
+  db,
+  collection,
+  setDoc,
+  doc,
+  getDoc,
+  getDocs,
+  addDoc,
+  query,
+  orderBy,
+  where,
+};
 
 /*STORAGE */
 const storage = getStorage(firebaseApp);
