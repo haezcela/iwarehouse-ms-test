@@ -103,6 +103,7 @@ $("#fix-form").submit(async function (event) {
     phoneNumber: phoneNumber,
     issues: tags, // Add issues array to form data
     timestamp: new Date(), // Add a timestamp field with the current date and time
+    status: "To be diagnosed",
   };
 
   try {
