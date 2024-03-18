@@ -62,7 +62,12 @@ if (clientSignupForm) {
 function signUp(firstName, lastName, email, password, role) {
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
+      // Optional: Hide alert after a few seconds
+      setTimeout(() => {
+        alert.remove();
+      }, 3000); // Remove after 3 seconds
       // Add a new document in collection "users"
+
       setDoc(doc(collection(db, "users"), userCredential.user.uid), {
         firstName: firstName,
         lastName: lastName,
