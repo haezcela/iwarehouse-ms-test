@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoice</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: orange; /* Set orange background */
+      }
+
+      .container {
+        position: relative; /* Set position to relative */
+        height: 100vh; /* Set container height to viewport height */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .invoice-container {
+        background-color: white; /* Set white background */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Add box shadow */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="invoice-container">
+        <h3>Invoice Details</h3>
+        <div id="invoice-details"></div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      // Retrieve order details from query parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const orderId = urlParams.get("orderId");
+
+      // Fetch order details from server and display
+      // This is just a placeholder, you need to implement your server-side logic to fetch order details
+      fetchOrderDetails(orderId)
+        .then((orderData) => {
+          displayInvoiceDetails(orderData);
+        })
+        .catch((error) => {
+          console.error("Error fetching order details:", error);
+        });
+
+      // Function to fetch order details from server
+      function fetchOrderDetails(orderId) {
+        // You need to implement your server-side logic here to fetch order details
+        // For demonstration purposes, we're just returning a dummy promise with hardcoded data
+        return new Promise((resolve, reject) => {
+          const orderData = {
+            // Dummy data, replace with actual order details
+            id: orderId,
+            // Add other fields as needed
+            invoice: {
+              date: "2024-04-20",
+              clientName: "Clay",
+              device: "SAMSUNG GALAXY BOOK 2",
+              repairType: "Screen replacement",
+              repairCost: "₱1,500",
+              technician: "Eddie Kim",
+              total: "₱1,500",
+            },
+          };
+          resolve(orderData);
+        });
+      }
+
+      // Function to display invoice details
+      function displayInvoiceDetails(orderData) {
+        const invoiceDetails = document.getElementById("invoice-details");
+        const { invoice } = orderData;
+        const invoiceContent = `
+        <p>Date: ${invoice.date || "N/A"}</p>
+        <p>Client Name: ${invoice.clientName || "N/A"}</p>
+        <p>Device: ${invoice.device || "N/A"}</p>
+        <p>Repair Type: ${invoice.repairType || "N/A"}</p>
+        <p>Repair Cost: ${invoice.repairCost || "N/A"}</p>
+        <p>Technician: ${invoice.technician || "N/A"}</p>
+        <p>Total: ${invoice.total || "N/A"}</p>
+      `;
+        invoiceDetails.innerHTML = invoiceContent;
+      }
+    </script>
+  </body>
+</html>

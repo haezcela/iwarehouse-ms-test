@@ -32,18 +32,9 @@
                         <div class="contacts"></div>
                         <div class="email"></div>
                     </div>
-                    <div class="dev-info">
-                        <div class="col-4">
-                            <h5>Device:</h5>
-                            <h5>Brand:</h5>
-                            <h5>Model:</h5>
-                        </div>
-                        <div class="col-7">
-                            <h5>Under Warranty::</h5>
-                            <h5>Repair Type:</h5>
-                            <h5>Issues:</h5>
-                        </div>
-                    </div>
+<div id="dev-info-container">
+</div>
+                    
                     <div class="desc">
                         <div></div>
                     </div>
@@ -52,24 +43,24 @@
             
             <div class="status">
                 <div class="header">
-                    <h3>Repair Status</h3>
-                    <div class="chevron"><i class="fa-solid fa-chevron-down" onclick="toggleContent('content2')"></i></div>
+                  <h3>Repair Status</h3>
+                  <div class="chevron"><i class="fa-solid fa-chevron-down" onclick="toggleContent('content2')"></i></div>
                 </div>
                 <div class="content2">
-                        <div class="update">
-                            <div ><input type="checkbox" id="cb1"><label for="cb1"></label></div>
-                            <div class="col-3" id="line"></div>
-                            <div ><input type="checkbox" id="cb2"><label for="cb2"></label></div>
-                            <div class="col-3" id="line"></div>
-                            <div><input type="checkbox" id="cb3"><label for="cb3"></label></div>
-                        </div>
-                        <div class="stats">
-                            <div class="col-3"><h6>Waiting for parts</h6></div>
-                            <div class="col-4"><h6>Fixing</h6></div>
-                            <div class="col-3"><h6>Ready for Pickup</h6></div>
-                        </div>
+                  <div class="update">
+                    <div><input type="checkbox" id="cb1"><label for="cb1"></label></div>
+                    <div class="col-3" id="line"></div>
+                    <div><input type="checkbox" id="cb2"><label for="cb2"></label></div>
+                    <div class="col-3" id="line"></div>
+                    <div><input type="checkbox" id="cb3"><label for="cb3"></label></div>
+                  </div>
+                  <div class="stats">
+                    <div class="col-3"><h6>Waiting for parts</h6></div>
+                    <div class="col-4"><h6>Fixing</h6></div>
+                    <div class="col-3"><h6>Ready for Pickup</h6></div>
+                  </div>
                 </div>
-            </div>
+              </div>
         
             <div class="invoice">
                 <div class="header">
@@ -80,22 +71,22 @@
                     <form id="invoiceForm">
                         <div class="row i-details">
                             <div class="col-md-4">
-                                <h5>Date: <input type="text" class="date" value="" readonly></h5>
-                                <h5>Client Name: <input type="text" class="name" value="" readonly></h5>
-                                <h5>Device: <input type="text" class="device" value="" readonly></h5>
+                                <h5>Date: <input type="text" class="date" id="date" value="" readonly></h5>
+                                <h5>Client Name: <input type="text" class="name" id="client-name" value="" readonly></h5>
+                                <h5>Device: <input type="text" class="device" id="device" value="" readonly></h5>
                             </div>
                             <div class="col-md-4">
-                                <h5>Repair Type: <input type="text" class="type" value="" readonly></h5>
-                                <h5>Repair Cost: <input type="text" class="cost" value="" readonly></h5>
-                                <h5>Technician: <input type="text" class="technician" value="" readonly></h5>
+                                <h5>Repair Type: <input type="text" class="type" id="repair-type" value="" readonly></h5>
+                                <h5>Repair Cost: <input type="text" class="cost" id="repair-cost" value="" readonly></h5>
+                                <h5>Technician: <input type="text" id="technician" class="technician" value="" readonly></h5>
                             </div>
                             <div class="col-md-4" id="sum">
-                                <h5>Total: <input type="text" class="total" readonly></h5>
-                                <h5>Repair ID: <input type="text" class="id" readonly></h5>
+                                <h5>Total: <input type="text" id="total" class="total" readonly></h5>
+                                <h5>Repair ID: <input type="text" class="id" id="repairID" style="width: 150px;" readonly></h5>
                             </div>
                         </div>
                         <div class="bottom">
-                            <button type="button" class="send" onclick="saveChanges()">Send<img src="../images/send.png"></button>
+                            <button type="button" class="send" id="send-button" onclick="saveChanges()">Send<img src="../images/send.png"></button>
                         </div>
                     </form>
                 </div>
@@ -194,9 +185,9 @@
     }
 </script>
 
-</script>
-
-</script>
+<script type="module" src="../tech-dashboard.js"></script>
+<script type="module" src="../tech-status.js"></script>
+<script type="module" src="../tech-invoice.js"></script>
 
 </body>
 </html>

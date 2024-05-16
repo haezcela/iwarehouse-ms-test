@@ -1,11 +1,3 @@
-/*import {
-  getAuth,
-  onAuthStateChanged,
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-} from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
-
-*/
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js";
 import {
   getAuth,
@@ -13,23 +5,6 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
-/*import {
-  getFirestore,
-  collection,
-  addDoc,
-  query,
-  orderBy,
-  getDocs,
-} from "https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js";
-*/
-/*
-import {
-  getFirestore,
-  collection,
-  doc,
-  setDoc,
-} from "https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js";
-*/
 import {
   getFirestore,
   collection,
@@ -40,8 +15,11 @@ import {
   query,
   orderBy,
   getDocs,
+  updateDoc,
   where,
+  serverTimestamp,
 } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-firestore.js";
+
 import {
   getStorage,
   ref,
@@ -67,6 +45,7 @@ export {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 };
+
 /*DATABASE */
 const db = getFirestore(firebaseApp);
 export {
@@ -80,6 +59,8 @@ export {
   query,
   orderBy,
   where,
+  updateDoc,
+  serverTimestamp,
 };
 
 /*STORAGE */
