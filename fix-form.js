@@ -83,6 +83,7 @@ $("#fix-form").submit(async function (event) {
   var brand = $("#brandSelect").val();
   var model = $("#modelInput").val();
   var description = $("#descriptionTextarea").val();
+  var warranty = $("#warranty").val();
   var repairType = $("#repairTypeSelect").val();
   var phoneNumber = $("#phoneNumberInput").val();
   var file = $("#fileUpload")[0].files[0];
@@ -99,6 +100,7 @@ $("#fix-form").submit(async function (event) {
     brand: brand,
     model: model,
     description: description,
+    warranty: warranty,
     repairType: repairType,
     phoneNumber: phoneNumber,
     issues: tags, // Add issues array to form data

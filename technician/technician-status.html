@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<head>
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/tech-status.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="sidebar">
+                <img class="logo" src="../images/iwarehouse-logo.png">
+                <!-- <button class="add_req">+ Repair Item</button>
+                <div class="request"><a href=""><i></i>Request</a></div>
+                <div class="repair"><a href=""><i></i>Repairs</a></div>
+                <div class="history"><a href=""><i></i>History</a></div>
+            <div class="profile"></div> -->
+        </div>
+            
+        </div>
+        <div class="col-md-7">
+            <div class="info">
+                <div class="header">
+                    <h3>Device Info</h3>
+                    <div class="chevron"><i class="fa-solid fa-chevron-down" onclick="toggleContent('content1')"></i></div>
+                </div>
+                <div class="content1">
+                    <div class="client-info">
+                        <div class="name"></div>
+                        <div class="contacts"></div>
+                        <div class="email"></div>
+                    </div>
+                    <div class="dev-info">
+                        <div class="col-4">
+                            <h5>Device:</h5>
+                            <h5>Brand:</h5>
+                            <h5>Model:</h5>
+                        </div>
+                        <div class="col-7">
+                            <h5>Under Warranty::</h5>
+                            <h5>Repair Type:</h5>
+                            <h5>Issues:</h5>
+                        </div>
+                    </div>
+                    <div class="desc">
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="status">
+                <div class="header">
+                    <h3>Repair Status</h3>
+                    <div class="chevron"><i class="fa-solid fa-chevron-down" onclick="toggleContent('content2')"></i></div>
+                </div>
+                <div class="content2">
+                        <div class="update">
+                            <div ><input type="checkbox" id="cb1"><label for="cb1"></label></div>
+                            <div class="col-3" id="line"></div>
+                            <div ><input type="checkbox" id="cb2"><label for="cb2"></label></div>
+                            <div class="col-3" id="line"></div>
+                            <div><input type="checkbox" id="cb3"><label for="cb3"></label></div>
+                        </div>
+                        <div class="stats">
+                            <div class="col-3"><h6>Waiting for parts</h6></div>
+                            <div class="col-4"><h6>Fixing</h6></div>
+                            <div class="col-3"><h6>Ready for Pickup</h6></div>
+                        </div>
+                </div>
+            </div>
+        
+            <div class="invoice">
+                <div class="header">
+                    <div class="subhead"><h3>Invoice</h3> <h4 id="edit" onclick="toggleEdit()">Edit</h4></div>
+                    <div class="chevron"><i class="fa-solid fa-chevron-down" onclick="toggleInvoice()"></i></div>
+                </div>
+                <div class="content3">
+                    <form id="invoiceForm">
+                        <div class="row i-details">
+                            <div class="col-md-4">
+                                <h5>Date: <input type="text" class="date" value="" readonly></h5>
+                                <h5>Client Name: <input type="text" class="name" value="" readonly></h5>
+                                <h5>Device: <input type="text" class="device" value="" readonly></h5>
+                            </div>
+                            <div class="col-md-4">
+                                <h5>Repair Type: <input type="text" class="type" value="" readonly></h5>
+                                <h5>Repair Cost: <input type="text" class="cost" value="" readonly></h5>
+                                <h5>Technician: <input type="text" class="technician" value="" readonly></h5>
+                            </div>
+                            <div class="col-md-4" id="sum">
+                                <h5>Total: <input type="text" class="total" readonly></h5>
+                                <h5>Repair ID: <input type="text" class="id" readonly></h5>
+                            </div>
+                        </div>
+                        <div class="bottom">
+                            <button type="button" class="send" onclick="saveChanges()">Send<img src="../images/send.png"></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="col-md-3">
+            <div class="msg">
+                <div class="top"></div>
+                <div class="body"></div>
+                <div class="chatArea">
+                    <input type="text" class="chat" placeholder="Type message here">
+                </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+<script>
+    function toggleContent(contentId) {
+        const content = document.querySelector(`.${contentId}`);
+        const chevron = content.previousElementSibling.querySelector('.fa-chevron-down');
+        if (content.classList.contains('show')) {
+            content.classList.remove('show');
+            content.style.display = 'none';
+            chevron.style.transform = 'rotate(0deg)';
+        } else {
+            content.classList.add('show');
+            content.style.display = 'block';
+            chevron.style.transform = 'rotate(180deg)';
+        }
+    }
+
+    function toggleInvoice() {
+        const content = document.querySelector('.content3');
+        const chevron = document.querySelector('.invoice .fa-chevron-down');
+        const edit = document.getElementById('edit');
+        if (content.classList.contains('show')) {
+            content.classList.remove('show');
+            content.style.display = 'none';
+            chevron.style.transform = 'rotate(0deg)';
+            edit.style.display = 'none';
+        } else {
+            content.classList.add('show');
+            content.style.display = 'block';
+            chevron.style.transform = 'rotate(180deg)';
+            edit.style.display = 'block';
+        }
+    }
+
+//---------------iNVOICE----------------------//
+    let previousValues = {};
+
+    function toggleEdit() {
+        const editButton = document.getElementById("edit");
+        const inputs = document.querySelectorAll("input:not([type='button']), select");
+        if (editButton.textContent === "Edit") {
+            editButton.textContent = "Cancel";
+            editButton.classList.add("cancel");
+            inputs.forEach(input => {
+                if (!input.classList.contains('total') && !input.classList.contains('id')) {
+                    input.removeAttribute("readonly");
+                    if (input.value.trim() !== "") {
+                        previousValues[input.classList[0]] = input.value;
+                    }
+                }
+            });
+        } else {
+            editButton.textContent = "Edit";
+            editButton.classList.remove("cancel");
+            inputs.forEach(input => {
+                input.setAttribute("readonly", true);
+                if (previousValues.hasOwnProperty(input.classList[0])) {
+                    input.value = previousValues[input.classList[0]];
+                } else {
+                    input.value = "";
+                }
+            });
+        }
+    }
+
+    function saveChanges() {
+        const editButton = document.getElementById("edit");
+        const inputs = document.querySelectorAll("input:not([type='button']), select");
+        inputs.forEach(input => {
+            if (!input.classList.contains('total') && !input.classList.contains('id')) {
+                if (!previousValues.hasOwnProperty(input.classList[0])) {
+                    previousValues[input.classList[0]] = input.value;
+                }
+                input.setAttribute("readonly", true);
+            }
+        });
+        editButton.textContent = "Edit";
+        editButton.classList.remove("cancel");
+    }
+</script>
+
+</script>
+
+</script>
+
+</body>
+</html>

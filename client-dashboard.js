@@ -90,8 +90,8 @@ function displayOrder(orderData) {
   const cardContent = `
         <div class="card">
           <div class="card-body">
-          <h5 class="card-title">${orderData.brand} ${
-    orderData.model || "N/A"
+          <h5 class="card-title">${orderData.brand?.toUpperCase()} ${
+    orderData.model?.toUpperCase() || "N/A"
   }</h5>
   
             <h6 class="card-title">${orderData.status || "N/A"}</h6>
@@ -109,5 +109,7 @@ function displayOrder(orderData) {
   ordersContainer.appendChild(orderCard);
 
   const greetingElement = document.getElementById("greetings"); // Replace with your element ID
-  greetingElement.textContent = `Hello, ${firstName}!`;
+  greetingElement.textContent = `Hello, ${
+    firstName.charAt(0).toUpperCase() + firstName.slice(1)
+  }!`;
 }
